@@ -1,0 +1,53 @@
+MIT License
+
+Copyright (c) 2024 Catholic Missal API
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+ADDITIONAL NOTICES:
+
+This software accesses and aggregates liturgical data from various Catholic sources:
+
+1. USCCB (United States Conference of Catholic Bishops) Content:
+   - Used in accordance with fair use guidelines for educational and religious purposes
+   - Commercial use may require additional licensing
+   - See: https://www.usccb.org/committees/divine-worship/policies
+
+2. Vatican Official Documents:
+   - Used with proper attribution in accordance with Vatican policies
+   - See: https://www.vatican.va
+
+3. Traditional Catholic Prayers:
+   - Public domain content
+   - Traditional prayers are part of the common heritage of the Catholic Church
+
+4. Third-party Content:
+   - All third-party content is used with proper attribution
+   - Users should verify licensing requirements for commercial applications
+
+DISCLAIMER:
+This software is provided for educational and religious purposes. Users are
+responsible for ensuring compliance with all applicable copyright and licensing
+requirements when using this software, especially for commercial purposes.
+
+The developers of this software make no warranties about the accuracy,
+completeness, or reliability of the liturgical information provided. Users
+should consult official Church sources for authoritative liturgical guidance.
