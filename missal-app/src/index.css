@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-catholic-red hover:bg-red-800 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+  
+  .card {
+    @apply bg-white rounded-lg shadow-md p-6 border border-gray-100;
+  }
+  
+  .card-hover {
+    @apply card hover:shadow-lg transition-shadow duration-200;
+  }
+  
+  .liturgical-text {
+    @apply font-serif text-gray-800 leading-relaxed;
+  }
+  
+  .scripture-text {
+    @apply liturgical-text text-lg leading-8;
+  }
+  
+  .prayer-text {
+    @apply liturgical-text italic;
+  }
+  
+  .liturgical-color-white {
+    @apply border-l-4 border-liturgical-white bg-gray-50;
+  }
+  
+  .liturgical-color-red {
+    @apply border-l-4 border-liturgical-red bg-red-50;
+  }
+  
+  .liturgical-color-green {
+    @apply border-l-4 border-liturgical-green bg-green-50;
+  }
+  
+  .liturgical-color-purple {
+    @apply border-l-4 border-liturgical-purple bg-purple-50;
+  }
+  
+  .liturgical-color-rose {
+    @apply border-l-4 border-liturgical-rose bg-pink-50;
+  }
+  
+  .liturgical-color-black {
+    @apply border-l-4 border-liturgical-black bg-gray-100;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8B0000;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A52A2A;
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+  }
+  
+  .card {
+    box-shadow: none;
+    border: 1px solid #ccc;
+    page-break-inside: avoid;
+  }
+}
