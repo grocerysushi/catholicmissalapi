@@ -21,6 +21,8 @@
 		1A1A1A1A1A1A1A33 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1A1A1A1A1A1A32 /* CoreDataManager.swift */; };
 		1A1A1A1A1A1A1A35 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1A1A1A1A1A1A34 /* NotificationManager.swift */; };
 		1A1A1A1A1A1A1A37 /* CatholicMissal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1A1A1A1A1A1A1A36 /* CatholicMissal.xcdatamodeld */; };
+		1A1A1A1A1A1A1A39 /* TestReadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1A1A1A1A1A1A38 /* TestReadingView.swift */; };
+		1A1A1A1A1A1A1A3B /* TestingUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1A1A1A1A1A1A3A /* TestingUtilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */

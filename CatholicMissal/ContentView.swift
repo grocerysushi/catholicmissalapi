@@ -32,12 +32,19 @@ struct ContentView: View {
                 }
                 .tag(2)
             
+            TestReadingView()
+                .tabItem {
+                    Image(systemName: "flask")
+                    Text("Test")
+                }
+                .tag(3)
+            
             SettingsView()
                 .tabItem {
                     Image(systemName: "gear")
                     Text("Settings")
                 }
-                .tag(3)
+                .tag(4)
         }
         .accentColor(Color("CatholicRed"))
         .task {

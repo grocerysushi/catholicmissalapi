@@ -111,9 +111,18 @@ class APIService: ObservableObject {
 
 // MARK: - Sample Data for Development/Offline Use
 extension APIService {
-    func getSampleReadings() -> DailyReadings {
+    func getSampleReadings(for date: Date? = nil) -> DailyReadings {
+        let targetDate = date ?? Date()
+        let dateString = targetDate.toAPIDateString()
+        
+        // Special reading for August 29, 2025 - Memorial of the Passion of Saint John the Baptist
+        if dateString == "2025-08-29" {
+            return getSaintJohnBaptistReading()
+        }
+        
+        // Default sample reading
         return DailyReadings(
-            date: Date().toAPIDateString(),
+            date: dateString,
             firstReading: Reading(
                 reference: "Isaiah 61:1-2a, 10-11",
                 citation: "Is 61:1-2a, 10-11",
@@ -141,6 +150,41 @@ extension APIService {
                 source: "USCCB"
             ),
             source: "USCCB",
+            lastUpdated: ISO8601DateFormatter().string(from: Date())
+        )
+    }
+    
+    private func getSaintJohnBaptistReading() -> DailyReadings {
+        return DailyReadings(
+            date: "2025-08-29",
+            firstReading: Reading(
+                reference: "1 Thessalonians 4:1-8",
+                citation: "1 Thes 4:1-8",
+                text: "Brothers and sisters,\nwe earnestly ask and exhort you in the Lord Jesus that,\nas you received from us\nhow you should conduct yourselves to please God–\nand as you are conducting yourselves–\nyou do so even more.\nFor you know what instructions we gave you through the Lord Jesus.\n\nThis is the will of God, your holiness:\nthat you refrain from immorality,\nthat each of you know how to acquire a wife for himself\nin holiness and honor, not in lustful passion\nas do the Gentiles who do not know God;\nnot to take advantage of or exploit a brother or sister in this matter,\nfor the Lord is an avenger in all these things,\nas we told you before and solemnly affirmed.\nFor God did not call us to impurity but to holiness.\nTherefore, whoever disregards this,\ndisregards not a human being but God,\nwho also gives his Holy Spirit to you.",
+                shortText: nil,
+                source: "USCCB - Lectionary 429/634"
+            ),
+            responsorialPsalm: Psalm(
+                reference: "Psalm 97:1 and 2b, 5-6, 10, 11-12",
+                refrain: "Rejoice in the Lord, you just!",
+                verses: [
+                    "The LORD is king; let the earth rejoice;\nlet the many isles be glad.\nJustice and judgment are the foundation of his throne.",
+                    "The mountains melt like wax before the LORD,\nbefore the LORD of all the earth.\nThe heavens proclaim his justice,\nand all peoples see his glory.",
+                    "The LORD loves those who hate evil;\nhe guards the lives of his faithful ones;\nfrom the hand of the wicked he delivers them.",
+                    "Light dawns for the just;\nand gladness, for the upright of heart.\nBe glad in the LORD, you just,\nand give thanks to his holy name."
+                ],
+                source: "USCCB - Lectionary 429/634"
+            ),
+            secondReading: nil,
+            gospelAcclamation: "Alleluia, alleluia.\nBlessed are those who are persecuted for the sake of righteousness,\nfor theirs is the Kingdom of heaven.\nAlleluia, alleluia.",
+            gospel: Reading(
+                reference: "Mark 6:17-29",
+                citation: "Mk 6:17-29",
+                text: "Herod was the one who had John the Baptist arrested and bound in prison\non account of Herodias,\nthe wife of his brother Philip, whom he had married.\nJohn had said to Herod,\n\"It is not lawful for you to have your brother's wife.\"\nHerodias harbored a grudge against him\nand wanted to kill him but was unable to do so.\nHerod feared John, knowing him to be a righteous and holy man,\nand kept him in custody.\nWhen he heard him speak he was very much perplexed,\nyet he liked to listen to him.\nShe had an opportunity one day when Herod, on his birthday,\ngave a banquet for his courtiers,\nhis military officers, and the leading men of Galilee.\nHerodias' own daughter came in\nand performed a dance that delighted Herod and his guests.\nThe king said to the girl,\n\"Ask of me whatever you wish and I will grant it to you.\"\nHe even swore many things to her,\n\"I will grant you whatever you ask of me,\neven to half of my kingdom.\"\nShe went out and said to her mother,\n\"What shall I ask for?\"\nShe replied, \"The head of John the Baptist.\"\nThe girl hurried back to the king's presence and made her request,\n\"I want you to give me at once\non a platter the head of John the Baptist.\"\nThe king was deeply distressed,\nbut because of his oaths and the guests\nhe did not wish to break his word to her.\nSo he promptly dispatched an executioner with orders\nto bring back his head.\nHe went off and beheaded him in the prison.\nHe brought in the head on a platter and gave it to the girl.\nThe girl in turn gave it to her mother.\nWhen his disciples heard about it,\nthey came and took his body and laid it in a tomb.",
+                shortText: nil,
+                source: "USCCB - Lectionary 429/634"
+            ),
+            source: "USCCB - Memorial of the Passion of Saint John the Baptist",
             lastUpdated: ISO8601DateFormatter().string(from: Date())
         )
     }

@@ -97,6 +97,14 @@ struct DailyReadingsView: View {
                     }
                     .font(.caption)
                     .foregroundColor(Color("CatholicRed"))
+                    
+                    Button("Aug 29, 2025") {
+                        if let testDate = Calendar.current.date(from: DateComponents(year: 2025, month: 8, day: 29)) {
+                            selectedDate = testDate
+                        }
+                    }
+                    .font(.caption)
+                    .foregroundColor(Color("CatholicGold"))
                 }
                 
                 Spacer()
@@ -487,8 +495,8 @@ extension DailyReadingsView {
             await MainActor.run {
                 self.errorMessage = error.localizedDescription
                 self.isLoading = false
-                // Fallback to sample data
-                self.readings = apiService.getSampleReadings()
+                // Fallback to sample data for the specific date
+                self.readings = apiService.getSampleReadings(for: selectedDate)
             }
         }
     }
